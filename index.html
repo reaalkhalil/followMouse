@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>followMouse Demo</title>
+<style>
+.header{
+  font-weight: bold;
+  color:#66f;
+  font-family: sans-serif;
+  font-size: 80px;
+  margin-left: 400px;
+  margin-top: 100px;
+  display:inline-block;
+  -webkit-font-smoothing: antialiased;
+}
+#text2{
+  font-weight: bold;
+font-family: sans-serif;
+display:inline-block;
+}
+</style>
+  <script id="javascript" src="followMouse.js"></script>
+</head>
+<body>
+<div class="header" id="text">Hey</div> <div id="eye" class="header">👁</div>
+<br><br><br>
+<div id="text2">hellooo</div>
+
+<script>
+var text = document.getElementById('text')
+var eye = document.getElementById('eye')
+var text2 = document.getElementById('text2')
+  followMouse.add(text,'#009','20','50','50','45',true);
+  followMouse.add(eye,'#000','20','50','50','45',true);
+  followMouse.add(text2,'#ccc','10','50','30','35',false);
+  followMouse.activate()
+</script>
+
+</body>
+</html>
