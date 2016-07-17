@@ -1,8 +1,8 @@
 var followMouse = (function(){
 	my = {};
 	my.elements = []
-	my.add = function(e,c,l,t,s,m,sh){
-		var elementToAdd = {element:e, color:c, length:l, tilt:t, steps:s, maxAngle:m, dropShadow:sh}
+	my.add = function(e,c,d,t,s,m,sh){
+		var elementToAdd = {element:e, color:c, depth:d, tilt:t, steps:s, maxAngle:m, dropShadow:sh}
 		my.elements.push(elementToAdd);
 	}
 	my.activate = function(){
@@ -23,8 +23,8 @@ var followMouse = (function(){
 			if(Math.abs(v.tilt*y) > v.maxAngle){y = v.maxAngle*y/Math.abs(y)/v.tilt;}
 			if(Math.abs(v.tilt*x) > v.maxAngle){x = v.maxAngle*x/Math.abs(x)/v.tilt;}
 			for (i=0; i<v.steps; i++) {
-				tx = Math.round(100*v.length * x / v.steps * i)/100;
-				ty = Math.round(100*v.length * y / v.steps * i)/100;
+				tx = Math.round(100*v.depth * x / v.steps * i)/100;
+				ty = Math.round(100*v.depth * y / v.steps * i)/100;
 				shadow += tx + 'px ' + ty + 'px 0px '+v.color + ', ';
 			}
 			var dropShadowOpacity = (v.dropShadow)?"0.6":"0";
